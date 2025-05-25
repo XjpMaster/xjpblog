@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>个人博客系统 - 项目详情 | 柒墨轩</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- 顶部导航 -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-600 flex items-center space-x-2">
+        <i class="fas fa-code"></i>
+        <span>柒墨轩</span>
+      </a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="../index.html" class="text-gray-700 hover:text-indigo-600">首页</a>
+        <a href="../article/aone.html" class="text-gray-700 hover:text-indigo-600">技术教程</a>
+        <a href="../article/aall.html" class="text-gray-700 hover:text-indigo-600">所有文章</a>
+        <a href="project.html" class="text-indigo-600 font-semibold">项目</a>
+        <a href="../about/aboutme.html" class="text-gray-700 hover:text-indigo-600">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面头部 -->
+  <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 id="project-title" class="text-4xl font-bold mb-4">加载中...</h1>
+      <p id="project-desc" class="text-white/80 text-lg">请稍等，正在加载项目内容</p>
+    </div>
+  </section>
+
+  <!-- Markdown内容区域 -->
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <article id="markdown-content" class="prose prose-indigo max-w-none">
+      正在加载项目详情...
+    </article>
+
+    <div class="mt-12 text-center">
+      <a href="project.html" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">
+        <i class="fas fa-arrow-left mr-2"></i> 返回项目列表
+      </a>
+    </div>
+  </main>
+
+  <!-- 脚本 -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug') || 'blog-system';
+    const mdPath = `md/${slug}.md`;
+
+    fetch(mdPath)
+      .then(res => {
+        if (!res.ok) throw new Error("文件不存在");
+        return res.text();
+      })
+      .then(md => {
+        const html = marked.parse(md);
+        document.getElementById('markdown-content').innerHTML = html;
+
+        // 可选：从 Markdown 第一行作为标题、第二行为描述
+        const lines = md.trim().split('\n');
+        const title = lines[0].replace(/^#\s*/, '');
+        const desc = lines[1]?.replace(/^> /, '') || '';
+
+        document.getElementById('project-title').textContent = title;
+        document.getElementById('project-desc').textContent = desc;
+      })
+      .catch(err => {
+        document.getElementById('markdown-content').innerHTML = `<p class="text-red-500">加载失败：${err.message}</p>`;
+      });
+  </script>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-white py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
+      © 2025 柒墨轩 | 萧佳鹏的个人博客。保留所有权利。
+    </div>
+  </footer>
+
+</body>
+</html>
