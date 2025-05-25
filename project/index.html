@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的项目 - 柒墨轩</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- 顶部导航 -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-600 flex items-center space-x-2">
+        <i class="fas fa-code"></i>
+        <span>柒墨轩</span>
+      </a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="../index.html" class="text-gray-700 hover:text-indigo-600">首页</a>
+        <a href="../article/aone.html" class="text-gray-700 hover:text-indigo-600">技术教程</a>
+        <a href="../article/atwo.html" class="text-gray-700 hover:text-indigo-600">编程随想</a>
+        <a href="../article/athree.html" class="text-gray-700 hover:text-indigo-600">工具分享</a>
+        <a href="../article/aall.html" class="text-gray-700 hover:text-indigo-600">所有文章</a>
+        <a href="../about/aboutme.html" class="text-gray-700 hover:text-indigo-600">关于</a>
+        <a href="project.html" class="text-indigo-600 font-semibold">项目</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面头部 -->
+  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">我的项目</h1>
+      <p class="text-white/80 text-lg">这里收录了我开发过的一些个人项目与开源作品</p>
+    </div>
+  </section>
+
+  <!-- 项目列表 -->
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 示例项目卡片 1 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/featured/?dashboard" alt="项目封面" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">个人博客系统</h2>
+          <p class="text-sm text-gray-600 mb-4">使用 React + Node.js + MongoDB 搭建的全栈博客平台，支持 Markdown 撰写与评论系统。</p>
+          <div class="flex flex-wrap gap-2 text-xs mb-4">
+            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">React</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">Node.js</span>
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded">MongoDB</span>
+          </div>
+          <a href="https://github.com/xjpmaster/xjpblog" target="_blank" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <i class="fab fa-github mr-1"></i> 查看源码
+          </a>
+        </div>
+      </div>
+
+      <!-- 示例项目卡片 2 -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="https://source.unsplash.com/featured/?ai" alt="AI项目封面" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">中文文本分类模型</h2>
+          <p class="text-sm text-gray-600 mb-4">使用 PyTorch 构建的中文情感分析模型，支持 EarlyStopping、AMP、数据增强等特性。</p>
+          <div class="flex flex-wrap gap-2 text-xs mb-4">
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">PyTorch</span>
+            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">NLP</span>
+            <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded">AMP</span>
+          </div>
+          <a href="https://github.com/xjpmaster/chinese-text-classification" target="_blank" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+            <i class="fab fa-github mr-1"></i> 查看源码
+          </a>
+        </div>
+      </div>
+
+      <!-- 更多项目可以按需添加 -->
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-white py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
+      © 2025 柒墨轩 | 萧佳鹏的个人博客。保留所有权利。
+    </div>
+  </footer>
+
+</body>
+</html>
