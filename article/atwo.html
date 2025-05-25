@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>编程随想 - 柒墨轩</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- 顶部导航栏 -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-600 flex items-center space-x-2">
+        <i class="fas fa-code"></i>
+        <span>柒墨轩</span>
+      </a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="../index.html" class="text-gray-700 hover:text-indigo-600">首页</a>
+        <a href="aone.html" class="text-gray-700 hover:text-indigo-600">技术教程</a>
+        <a href="atwo.html" class="text-indigo-600 font-semibold">编程随想</a>
+        <a href="athree.html" class="text-gray-700 hover:text-indigo-600">工具分享</a>
+        <a href="../about/aboutme.html" class="text-gray-700 hover:text-indigo-600">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面标题 -->
+  <section class="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-16 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">编程随想</h1>
+      <p class="text-white/80">记录开发路上的思考、灵感、反思与成长</p>
+    </div>
+  </section>
+
+  <!-- 文章列表 -->
+  <main class="max-w-6xl mx-auto py-16 px-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- 示例文章卡片 -->
+      <article class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+        <img src="https://source.unsplash.com/featured/?thinking,code" alt="文章封面" class="rounded-md mb-4">
+        <h2 class="text-xl font-semibold mb-2 text-gray-900">写代码之外：如何成为优秀的开发者</h2>
+        <p class="text-sm text-gray-600 mb-4">技术之外，沟通、产品理解与团队协作同样重要。分享一些成长心得。</p>
+        <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">阅读全文 <i class="fas fa-arrow-right ml-1"></i></a>
+      </article>
+
+      <article class="bg-white rounded-xl shadow hover:shadow-lg transition p-6">
+        <img src="https://source.unsplash.com/featured/?coffee,laptop" alt="文章封面" class="rounded-md mb-4">
+        <h2 class="text-xl font-semibold mb-2 text-gray-900">程序员如何高效学习？</h2>
+        <p class="text-sm text-gray-600 mb-4">快速学习新技术的策略，包括如何阅读官方文档、建立知识体系等方法。</p>
+        <a href="#" class="text-indigo-600 hover:text-indigo-800 text-sm font-medium">阅读全文 <i class="fas fa-arrow-right ml-1"></i></a>
+      </article>
+
+      <!-- 可添加更多文章... -->
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
+      © 2025 柒墨轩 | 萧佳鹏的个人博客。保留所有权利。
+    </div>
+  </footer>
+
+</body>
+</html>
