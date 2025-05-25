@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>文章标题 - 柒墨轩</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 在 post.html 中 <head> 加入 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- 顶部导航 -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="text-2xl font-bold text-indigo-600 flex items-center space-x-2">
+        <i class="fas fa-code"></i>
+        <span>柒墨轩</span>
+      </a>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="../index.html" class="text-gray-700 hover:text-indigo-600">首页</a>
+        <a href="aone.html" class="text-gray-700 hover:text-indigo-600">技术教程</a>
+        <a href="atwo.html" class="text-gray-700 hover:text-indigo-600">编程随想</a>
+        <a href="athree.html" class="text-gray-700 hover:text-indigo-600">工具分享</a>
+        <a href="aall.html" class="text-gray-700 hover:text-indigo-600">所有文章</a>
+        <a href="../about/aboutme.html" class="text-gray-700 hover:text-indigo-600">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 文章头部 -->
+  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-4">示例文章标题：用JavaScript构建博客</h1>
+      <div class="text-white/80 text-sm">
+        发布于 <time datetime="2024-12-01">2024年12月1日</time> · 分类：<span class="underline">技术教程</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文内容 -->
+  <main class="max-w-3xl mx-auto px-4 py-16">
+    <article id="markdown-content" class="prose prose-indigo max-w-none">
+      正在加载文章内容...
+    </article>
+  </main>
+
+  <script>
+    // 获取 URL 参数 ?file=xxx.md
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileName = urlParams.get('file') || 'posts/post-001.md';
+
+    fetch(fileName)
+      .then(res => res.text())
+      .then(md => {
+        const html = marked.parse(md);
+        document.getElementById('markdown-content').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('markdown-content').innerHTML = "<p class='text-red-500'>文章加载失败，请检查文件路径。</p>";
+        console.error(err);
+      });
+  </script>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-900 text-white py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
+      © 2025 柒墨轩 | 萧佳鹏的个人博客。保留所有权利。
+    </div>
+  </footer>
+
+</body>
+</html>
